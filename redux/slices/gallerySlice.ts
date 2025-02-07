@@ -22,7 +22,7 @@ const initialState: GalleryState = {
 export const fetchImages = createAsyncThunk("gallery/fetchImages", async () => {
   const response = await axios.get("https://rickandmortyapi.com/api/character");
 
-  return response.data.results.slice(0, 10).map((character: any) => ({
+  return response.data.results.slice(0, 10).map((character) => ({
     id: character.id.toString(),
     url: character.image, 
   }));
